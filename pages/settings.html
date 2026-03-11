@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2>🍳 Recipe Website</h2>
+            <div class="nav-links">
+                <a href="recipes.html">Recipes</a>
+                <a href="settings.html" class="active">Settings</a>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <a href="recipes.html" class="back-link">← Back to Recipes</a>
+        
+        <div class="form-card">
+            <h1>Settings</h1>
+            
+            <form id="settingsForm">
+                <div class="form-group">
+                    <label for="themeToggle">Theme</label>
+                    <div class="toggle-group">
+                        <span>Light Mode</span>
+                        <label class="switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="slider"></span>
+                        </label>
+                        <span>Dark Mode</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="stepDelay">Cooking Mode Step Delay (seconds)</label>
+                    <input type="number" id="stepDelay" min="3" max="60" value="10">
+                    <small>Time to wait before automatically moving to the next step</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Text-to-Speech Voice</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="voiceGender" value="male">
+                            <span>Male Voice</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="voiceGender" value="female" checked>
+                            <span>Female Voice</span>
+                        </label>
+                    </div>
+                    <small>Select the voice gender for reading recipe steps in Cooking Mode</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Voice Accent</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="voiceAccent" value="en-US" checked>
+                            <span>American English</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="voiceAccent" value="en-GB">
+                            <span>British English</span>
+                        </label>
+                    </div>
+                    <small>Select the accent for the voice</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Save Settings</button>
+                
+                <div id="successMessage" class="success-message" style="display: none;">
+                    Settings saved successfully!
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../js/storage.js"></script>
+    <script src="../js/settings.js"></script>
+</body>
+</html>

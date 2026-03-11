@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Recipes</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .reset-container {
+            max-width: 600px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 2rem;
+        }
+        .reset-card {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        .reset-card h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .reset-card p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .status-message {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .status-message.success {
+            background-color: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+        }
+        .status-message.info {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+        }
+    </style>
+</head>
+<body class="no-navbar">
+    <div class="reset-container">
+        <div class="reset-card">
+            <h1>🔄 Reset Recipes</h1>
+            <p>Click the button below to clear old recipes and load the new expanded collection of 12 recipes.</p>
+            
+            <button id="resetBtn" class="btn btn-primary">Reset Recipes</button>
+            
+            <div id="statusMessage" style="display: none;"></div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            const btn = document.getElementById('resetBtn');
+            const statusMessage = document.getElementById('statusMessage');
+            
+            // Disable button
+            btn.disabled = true;
+            btn.textContent = 'Resetting...';
+            
+            // Clear recipes from localStorage
+            localStorage.removeItem('recipeApp_recipes');
+            
+            // Show success message
+            statusMessage.style.display = 'block';
+            statusMessage.className = 'status-message success';
+            statusMessage.textContent = '✅ Recipes cleared! Redirecting to login page...';
+            
+            // Redirect to login page after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

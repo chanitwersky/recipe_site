@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website - Login</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="no-navbar">
+    <div class="container">
+        <div class="login-card">
+            <h1>🍳 Recipe Website</h1>
+            <p class="subtitle">Login to access your recipes</p>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required placeholder="Enter username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter password">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+                
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+            
+            <div class="demo-users">
+                <p><strong>Demo Users:</strong></p>
+                <p>user1 / 1234</p>
+                <p>chef / recipe</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

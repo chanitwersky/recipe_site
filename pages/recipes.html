@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recipes</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2>🍳 Recipe Website</h2>
+            <div class="nav-links">
+                <a href="recipes.html" class="active">Recipes</a>
+                <a href="settings.html">Settings</a>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>My Recipes</h1>
+            <a href="add-recipe.html" class="btn btn-primary">+ Add Recipe</a>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="🔍 Search recipes...">
+        </div>
+        
+        <div id="recipesList" class="recipes-grid"></div>
+        
+        <div id="noRecipes" class="no-recipes" style="display: none;">
+            <p>No recipes found. Start by adding your first recipe!</p>
+        </div>
+    </div>
+    
+    <script src="../js/storage.js"></script>
+    <script src="../js/recipes.js"></script>
+</body>
+</html>
